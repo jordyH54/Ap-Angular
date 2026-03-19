@@ -1,0 +1,29 @@
+<p>character-list works!</p>
+
+    <h3>Listado Fuertes</h3>
+        <ol>
+
+            @for (character of characters(); track character.id; let idx = $index) {
+
+
+                @if(character.power > 500){
+                    
+                         <li>
+                <span>{{idx + 1}} - {{character.name}}</span>
+                <strong 
+                [class.text-danger]="character.power > 9000"
+                [class.text-primary]="character.power < 9000"
+
+                >
+                {{character.power}}</strong>
+            </li>
+                }@else {
+                    <li><strong>Aqui no vale la pena ver nada</strong></li>
+                }
+       
+
+
+            }
+
+
+        </ol>
